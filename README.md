@@ -1,12 +1,16 @@
 # nodejs-microservice
 
 ## what?
-- Sample microservice built with nodejs and express
+- a small microservice for managing books (CREATE, READ, UPDATE, DELETE)
+
+## how?
+- using express and mongodb
+- with as little external dependencies I could build it with
 
 ## why?
 - a refresher for building an API in node.js
 - a reference template for a future mini microservice
-- a chill break
+- for fun
 
 ## who?
 - @wilhelmpaulm
