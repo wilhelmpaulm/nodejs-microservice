@@ -3,8 +3,8 @@ const setupDeleteBook = ({ booksDb }) => {
     if (!id) {
       throw new Error("ID is required.");
     }
-    const book = await booksDb.findById({ id });
-    return commentsDb.remove(book);
+    const book = await booksDb.findOne({ id });
+    return booksDb.remove(book);
   };
 
   return deleteBook;
