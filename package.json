@@ -2,9 +2,10 @@
   "name": "nodejs-microservice",
   "version": "1.0.0",
   "description": "sample microservice with node.js, express, and mongodb",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js",
+    "test": "jest src --watch"
   },
   "repository": {
     "type": "git",
@@ -31,11 +32,19 @@
   },
   "homepage": "https://github.com/wilhelmpaulm/nodejs-microservice#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "cookie-parser": "^1.4.6",
+    "cuid": "^2.1.8",
+    "express": "^4.17.2",
+    "isbn": "^0.4.0",
+    "mongodb": "^4.3.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.0",
     "dotenv": "^12.0.3",
     "eslint": "^8.6.0",
-    "nodemon": "^2.0.15"
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2"
   }
 }
