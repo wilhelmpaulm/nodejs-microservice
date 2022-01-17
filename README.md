@@ -2,6 +2,7 @@
 
 ## what?
 - a small microservice for managing books (CREATE, READ, UPDATE, DELETE)
+- still a work in progress
 
 ## how?
 - using express and mongodb
@@ -18,8 +19,10 @@
 - a dev that's developed a bunch of stuff but still hasn't deeply mastered one tech stack (which he think is the cause of his impostor syndrome).
 
 ## todo
-- [] add validation
+- [] add tests for entities
+- [] add validation for everything
 - [] add caching and optimize returns
 - [] add scripts for security vulnerability and audit
 - [] add tests for actions and data layer with in memory db
-- [] include postman file for easier tests
+- [] flip dependencies from express into injected httprequest and httpresponse
+- [x] include postman file for easier validation
