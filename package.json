@@ -35,6 +35,7 @@
     "cookie-parser": "^1.4.6",
     "cuid": "^2.1.8",
     "express": "^4.17.2",
+    "helmet": "^5.0.1",
     "isbn": "^0.4.0",
     "mongodb": "^4.3.0",
     "morgan": "^1.10.0"

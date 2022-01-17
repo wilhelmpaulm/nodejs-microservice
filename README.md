@@ -16,3 +16,10 @@
 - @wilhelmpaulm
 - a software engineer who constantly had to do multiple switches context for multiple teams with different tech stacks inside a week.
 - a dev that's developed a bunch of stuff but still hasn't deeply mastered one tech stack (which he think is the cause of his impostor syndrome).
+
+## todo
+- [] add validation
+- [] add caching and optimize returns
+- [] add scripts for security vulnerability and audit
+- [] add tests for actions and data layer with in memory db
+- [] include postman file for easier tests
