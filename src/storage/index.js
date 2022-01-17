@@ -1,7 +1,6 @@
 const booksDbFactory = require('./books-db.js')
 const { MongoClient } = require("mongodb");
 
-console.log(process.env.DB_URI);
 const uri = process.env.DB_URI;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,

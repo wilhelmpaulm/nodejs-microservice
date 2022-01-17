@@ -2,6 +2,7 @@
 
 ## what?
 - a small microservice for managing books (CREATE, READ, UPDATE, DELETE)
+- still a work in progress
 
 ## how?
 - using express and mongodb
@@ -16,3 +17,12 @@
 - @wilhelmpaulm
 - a software engineer who constantly had to do multiple switches context for multiple teams with different tech stacks inside a week.
 - a dev that's developed a bunch of stuff but still hasn't deeply mastered one tech stack (which he think is the cause of his impostor syndrome).
+
+## todo
+- [] add tests for entities
+- [] add validation for everything
+- [] add caching and optimize returns
+- [] add scripts for security vulnerability and audit
+- [] add tests for actions and data layer with in memory db
+- [] flip dependencies from express into injected httprequest and httpresponse
+- [x] include postman file for easier validation

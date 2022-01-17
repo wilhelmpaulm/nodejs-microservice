@@ -1,22 +1,29 @@
-const { bookFactory } = require("./../entities");
-const booksDb = require("./../storage");
+const {
+  removeBook,
+  findBook,
+  findBooks,
+  updateBook,
+  addBook,
+} = require("./../actions");
 
-const setupCreateBook = require("./books/create-book");
+const { isValidId, isValidIsbn } = require("./../helpers");
+
 const setupDeleteBook = require("./books/delete-book");
 const setupGetBook = require("./books/get-book");
 const setupGetBooks = require("./books/get-books");
-const setupUpdateBook = require("./books/update-book");
+const setupPostBook = require("./books/post-book");
+const setupPatchBook = require("./books/patch-book");
 
-const createBook = setupCreateBook({ bookFactory, booksDb });
-const getBooks = setupGetBooks({ bookFactory, booksDb });
-const getBook = setupGetBook({ bookFactory, booksDb });
-const updateBook = setupUpdateBook({ bookFactory, booksDb });
-const deleteBook = setupDeleteBook({ booksDb });
+const deleteBook = setupDeleteBook({ findBook, removeBook });
+const getBook = setupGetBook({ findBook });
+const getBooks = setupGetBooks({ findBooks, isValidId, isValidIsbn });
+const postBook = setupPostBook({ addBook });
+const patchBook = setupPatchBook({ updateBook });
 
 module.exports = {
-  createBook,
-  getBooks,
-  getBook,
-  updateBook,
   deleteBook,
+  getBook,
+  getBooks,
+  postBook,
+  patchBook,
 };

@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "0d525ffc-aa94-4be9-901c-1d9f385e4548",
+		"name": "nodejs-microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"second book\",\r\n    \"author\": \"wilhelm paul\",\r\n    \"keywords\": [\"uno\", \"dos\", \"tres\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/books?keywords=uno dos",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "uno dos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find a book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/books/ckyi89rau0000egtianhj5jin",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"books",
+						"ckyi89rau0000egtianhj5jin"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "ckyi80doa0000xwtihqqw7d21",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a book",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"publisher\": \"impostor syndrome limited\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/books/ckyi89rau0000egtianhj5jin",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"books",
+						"ckyi89rau0000egtianhj5jin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove a book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/books/ckyi80doa0000xwtihqqw7d21",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"books",
+						"ckyi80doa0000xwtihqqw7d21"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

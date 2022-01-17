@@ -8,7 +8,7 @@ const setupBookFactory = ({ isValidIsbn, isValidId, generateId }) => {
     isbn = "",
     desc = "",
     pageCount = 0,
-    keywords = "",
+    keywords = [],
   } = {}) => {
     if (!isValidId(id)) {
       throw new Error("ID must be valid.");
@@ -26,6 +26,10 @@ const setupBookFactory = ({ isValidIsbn, isValidId, generateId }) => {
       throw new Error("Author's name must be longer than 3 characters.");
     }
 
+    if (!Array.isArray(keywords)) {
+      throw new Error("Keywords must be an array.");
+    }
+
     return Object.freeze({
       id,
       name,
@@ -36,14 +40,14 @@ const setupBookFactory = ({ isValidIsbn, isValidId, generateId }) => {
       desc,
       pageCount,
       keywords,
-      // getName: () => name,
-      // getAuthor: () => author,
-      // getPublisher: () => publisher,
-      // getPublished: () => published,
-      // getIsbn: () => isbn,
-      // getDesc: () => desc,
-      // getPageCount: () => pageCount,
-      // getKeyWords: () => keywords,
+      getName: () => name,
+      getAuthor: () => author,
+      getPublisher: () => publisher,
+      getPublished: () => published,
+      getIsbn: () => isbn,
+      getDesc: () => desc,
+      getPageCount: () => pageCount,
+      getKeyWords: () => keywords,
     });
   };
 

@@ -1,8 +1,8 @@
-const setupGetBook = ({ findBook }) => {
-  const getBook = async (req, res) => {
+const setupPostBook = ({ addBook }) => {
+  const postBook = async (req, res) => {
     try {
-      const book = await findBook({
-        id: req.params.id,
+      const book = await addBook({
+        ...req.body,
       });
       res.send({
         status: 200,
@@ -17,7 +17,7 @@ const setupGetBook = ({ findBook }) => {
       });
     }
   };
-  return getBook;
+  return postBook;
 };
 
-module.exports = setupGetBook;
+module.exports = setupPostBook;
