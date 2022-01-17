@@ -1,4 +1,4 @@
-const setupCreateBook = ({ bookFactory, booksDb }) => {
+const setupAddBook = ({ bookFactory, booksDb }) => {
   const addBook = async (data) => {
     const book = bookFactory(data);
     return booksDb.insert(book);
@@ -7,4 +7,4 @@ const setupCreateBook = ({ bookFactory, booksDb }) => {
   return addBook;
 };
 
-module.exports = setupCreateBook;
+module.exports = setupAddBook;
