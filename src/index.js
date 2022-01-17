@@ -16,23 +16,26 @@ const {
 const app = express();
 
 // from https://expressjs.com/en/advanced/best-practice-security.html
-app.disable("x-powered-by");
-app.use(helmet());
+// app.disable("x-powered-by");
+// app.use(helmet());
 
-app.use(logger("dev"));
+// app.use(logger("dev"));
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
-app.post(`books`, postBook);
-app.delete(`books/:id`, deleteBook);
-app.patch(`books/:id`, patchBook);
-app.get(`books/:id`, getBook);
-app.get(`books`, getBooks);
+app.post(`/books`, postBook);
+app.delete(`/books/:id`, deleteBook);
+app.patch(`/books/:id`, patchBook);
+app.get(`/books/:id`, getBook);
+app.get(`/books`, getBooks);
 
 // handle calls to invalid routes
 app.use(function (req, res) {
-  res.status(404);
+  res.status(404).send({
+    status: 404,
+    body: "resource does not exist",
+  });
 });
 
 app.listen(8088, async () => {

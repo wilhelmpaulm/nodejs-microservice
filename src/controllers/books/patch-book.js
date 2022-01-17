@@ -7,16 +7,26 @@ const setupPatchBook = ({ updateBook }) => {
 
     try {
       const book = await updateBook({
-        id: req.query.id,
+        id: req.params.id,
         ...data,
       });
+
+      if (book == null) {
+        res.send({
+          status: 404,
+          body: null,
+        });
+      }
+
       res.send({
+        status: 200,
         body: book,
       });
     } catch (e) {
       console.log(e);
       res.status(400);
       res.send({
+        status: 400,
         error: e.message,
       });
     }

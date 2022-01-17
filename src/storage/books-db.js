@@ -1,6 +1,11 @@
 const booksDbFactory = ({ dbFactory }) => {
   const findAll = async ({ query } = {}) => {
     const db = await dbFactory();
+    console.log("query", query)
+    if (query && query.keywords) {
+      query = {...query, ...{ keywords: { $in: query.keywords } }};
+    }
+    console.log("query", query)
     const result = await db.collection("books").find(query);
     return (await result.toArray()).map(({ _id: id, ...found }) => ({
       id,

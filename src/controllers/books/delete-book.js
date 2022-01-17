@@ -1,17 +1,20 @@
-const setupDeleteBook = ({ removeBook }) => {
+const setupDeleteBook = ({ findBook, removeBook }) => {
   const deleteBook = async (req, res) => {
     try {
       const book = await removeBook({
         id: req.params.id,
       });
-      res.status(deleted.deletedCount === 0 ? 404 : 200);
+
+      res.status(book == null ? 404 : 200);
       res.send({
-        body: { book },
+        status: book == null ? 404 : 200,
+        body: book,
       });
     } catch (e) {
       console.log(e);
       res.status(400);
       res.send({
+        status: 400,
         error: e.message,
       });
     }
